@@ -1,20 +1,35 @@
 <?php
-$user = 'Laura';
+require_once 'User.php';
+require_once 'Role.php';
+
+$user = [
+    'first_name' => 'Laura',
+    'last_name' => 'T-Hulk',
+    'role' => 'admin',
+];
+
+$user = new User($user);
+
 $menu = [
     'Profile',
-    'Friends' , 
+    'Friends' ,
     'Stream',
     'Logout' ,
 ];
 
 print '<hr>';
 
-if ($user == 'admin'){
+if ($user->getRole()->getName() == 'admin'){
     $menu[] = 'Administration';
 } else {
     $menu[] = 'Bossbitch';
-    
 }
+
+if ($user->getRole()->can('create_blog_post')){
+    $menu[] = 'Create new blog post';
+}
+
+
 
 function printMenu ($list) {
     echo '<ol>';
