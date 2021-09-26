@@ -1,0 +1,20 @@
+h1, h2 {
+    font-family: Carlito;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: darkmagenta;
+}
+
+.submit {
+    background-color: cadetblue;
+}
+
+body {
+    background-image: url("chili.jpg");
+
+}
